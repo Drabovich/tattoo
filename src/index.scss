@@ -1,0 +1,99 @@
+@import 'libs/normalize';
+@import 'libs/null';
+@import 'style/fonts';
+@import 'style/var';
+@import 'style/header';
+@import 'style/slider';
+@import 'style/footer';
+@import 'style/store-info';
+
+body {
+    background-color: $backgroundWhite;
+}
+
+// Общие кнопки всего проекта ===============
+// Кнопка "открыть каталог"
+.btn {
+    background-color: $btnCatalog;
+    border: 2px solid $hoverLink;
+    max-width: 275px;
+    width: 100%;
+    height: 70px;
+    font-family: 'Jost-Regular';
+    font-size: 20px;
+    line-height: 22px;
+    color: $whiteColor;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid $hoverLink;
+        border-left: 2px solid $hoverLink;
+        background: $btnCatalog;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid $hoverLink;
+        border-left: 2px solid $hoverLink;
+        background: $btnCatalog;
+        transform: translateY(-50%) rotate(135deg);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+// Кнопка "Информация о компании"
+.info-btn {
+    background-color: $backgroundWhite;
+    border: 2px solid $hoverLink;
+    max-width: 275px;
+    width: 100%;
+    height: 70px;
+    font-family: 'Jost-Regular';
+    font-size: 20px;
+    line-height: lh(30, 20);
+    color: $hoverLink;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid $hoverLink;
+        border-left: 2px solid $hoverLink;
+        background-color: $backgroundWhite;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid $hoverLink;
+        border-left: 2px solid $hoverLink;
+        background-color: $backgroundWhite;
+        transform: translateY(-50%) rotate(135deg);
+    }
+}

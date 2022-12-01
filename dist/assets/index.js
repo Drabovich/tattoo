@@ -1,0 +1,1 @@
+import"./index.html";import"./index.scss";import"./modules/slider";import"./modules/modals";

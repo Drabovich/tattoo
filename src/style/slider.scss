@@ -1,0 +1,88 @@
+
+.slider-catalog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: $background;
+    @include adaptiv-value ("padding-top", 100, 60, 1);
+    @include adaptiv-value ("padding-bottom", 100, 60, 1);
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .slider{
+        position: relative;
+        max-width: 740px;
+        width: 100%;
+        overflow: hidden;
+        @include adaptiv-value ("margin-bottom", 40, 30, 1);
+
+
+        &__line{
+            display: flex;
+            align-items: center;
+            transition: all 1s;
+        }
+
+        &__btn-next{
+            position: absolute;
+            top: 50%;
+            padding: 0 10px;
+            transform: translateY(-50%);
+            border: none;
+            color: $hoverLink;
+            background-color: transparent;
+            @include adaptiv-value ("font-size", 50, 40, 1);
+            @include adaptiv-value ("right", 5, 0, 1);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #bb8b5f42;
+                }
+            }
+        }
+
+        &__btn-prev{
+            position: absolute;
+            top: 50%;
+            padding: 0 10px;
+            transform: translateY(-50%);
+            border: none;
+            color: $hoverLink;
+            background-color: transparent;
+            @include adaptiv-value ("font-size", 50, 40, 1);
+            @include adaptiv-value ("left", 5, 0, 1);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #bb8b5f42;
+                }
+            }
+        }
+
+        &__wrapper-dots{
+            display: flex;
+            column-gap: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+
+            .slider__dot{
+                width: 16px;
+                height: 16px;
+                border: 2px solid $btnCatalog;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        background-color: $hoverLink;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active-dot {
+    background-color: $hoverLink;
+}

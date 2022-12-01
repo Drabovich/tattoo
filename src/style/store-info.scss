@@ -1,0 +1,103 @@
+// Секция с информацией о компании
+.store-info {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    @include adaptiv-value ("padding-top", 120, 60, 0);
+    @include adaptiv-value ("padding-bottom", 120, 60, 0);
+
+    @media (max-width: 1570px) {
+        justify-content: center;
+    }
+
+    &__container{
+        display: flex;
+        max-width: 1570px;
+        width: 100%;
+        min-height: 635px;
+
+        @media (max-width: 1570px) {
+            max-width: 930px;
+            min-height: auto;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .store-info__img{
+            max-width: 930px;
+            width: 100%;
+            height: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            @media (max-width: 1570px) {
+                margin: 0 0 40px 0;
+            }
+
+            @media (max-width: 1570px) {
+                margin: 0 0 30px 0;
+            }
+        }
+
+        .store-info__content{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1 1 auto;
+
+            .content-info__wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                max-width: 600px;
+                width: 100%;
+                min-height: 500px;
+
+                @media (max-width: 1570px) {
+                    padding: 0 10px;
+                    max-width: 728px;
+                    justify-content: flex-start;
+                    min-height: auto;
+                }
+
+                .content-info__title {
+                    h2{
+                        font-family: 'Forum-Regular';
+                        @include adaptiv-value ("font-size", 50, 25, 0);
+                        line-height: lh(65, 50);
+                        color: $hoverLink;
+                    }
+                }
+
+                .content-info__text {
+                    p{
+                        font-family: 'Jost-Regular';
+                        @include adaptiv-value ("font-size", 17, 15, 0);
+                        line-height: lh(24, 17);
+                        color: $darkColor;
+                    }
+
+                    @media (max-width: 1570px) {
+                        margin: 20px 0 40px 0;
+                    }
+
+                    @media (max-width: 470px) {
+                        margin: 20px 0 30px 0;
+                    }
+                }
+
+                .content-info__btn {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    @media (max-width: 1570px) {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@use "sass:math";
+
+// Prc
+@function prc($pxOne, $pxTwo) {
+    @return math.div($pxOne, $pxTwo) * 100%;
+};
+
+// line-height
+@function lh($pxLh, $pxFz) {
+    @return math.div($pxLh, $pxFz);
+};
+
+// EM
+@function em($pxOne, $pxTwo) {
+    @return math.div($pxOne, $pxTwo) + em;
+};
+
+// REM
+@function rem($px) {
+    @return math.div($px, 16) + rem;
+};
+
+// Ширина всего полотна макета
+$maxWidth: 1920;
+
+// Ширина ограничивающего контейнера по макету
+$maxWidthContainer: 1216;
+
+// Адаптивные свойства!!!
+// @include adaptiv-value ("font-size", start, min);
+// @mixin adaptiv-value($property, $startSize, $minSize) {
+
+//     $addSize: $startSize - $minSize;
+//     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}))
+// }
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        // Только если меньше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } @else if $type==2 {
+        // Только если больше контейнера
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    } @else {
+        // Всегда 
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+// Переменные цветов
+$background: #030201;
+$backgroundWhite: #EEEEEE;
+$whiteColor: #FAF6F2;
+$greyColor: #D0D0D0;
+$hoverLink: #BB8C5F;
+$darkColor: #3E424B;
+$btnCatalog: #524336;
+
+
+
