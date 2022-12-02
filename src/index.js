@@ -1,8 +1,15 @@
 import './index.html';
 import './index.scss';
 import './modules/slider';
-import './modules/modals';
-// import { ruut } from './modules/calc';
+import { modals } from './modules/modals';
+import { sliders } from './modules/slider';
+
+window.addEventListener('DOMContentLoaded', () => {
+    modals();
+    sliders();
+//     tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
+//     tabs('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+});
 
 
 // // Переменные к выпадающему меню (каталог) в header

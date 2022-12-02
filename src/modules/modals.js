@@ -1,59 +1,42 @@
-// window.addEventListener('DOMContentLoaded', () => {
-//     modals();
-//     tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
-//     tabs('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
-//     forms()
-// })
 
-// // Модальные окна
-// const modals = () => {
+// Модальные окна
+export const modals = () => {
 
-//     function bindModal(triggerSelector, modalSelector, closeSelector) {
+    function bindModal(triggerSelector, modalSelector, closeSelector) {
 
-//         const trigger = document.querySelectorAll(triggerSelector), 
-//             modal = document.querySelector(modalSelector),
-//             close = document.querySelector(closeSelector);
+        const trigger = document.querySelectorAll(triggerSelector), 
+            modal = document.querySelector(modalSelector),
+            close = document.querySelector(closeSelector),
+            body = document.querySelector('body');
+        let widthScroll;
 
-//         trigger.forEach(item => {
+        if (trigger.length > 0) {
+            trigger.forEach(item => item.addEventListener('click', event => {
+                if (event.target) event.preventDefault();
+                modal.style.display = 'flex';
+                widthScroll = window.innerWidth - modal.offsetWidth + 'px';
+                document.body.style.overflow = 'hidden';
+                body.style.paddingRight = widthScroll;
+            }));
+        }
 
-//             item.addEventListener('click', (e) => {
-//                 if (e.target) {
-//                     e.preventDefault();
-//                 }
-    
-//                 modal.style.display = 'block';
-//                 document.body.style.overflow = 'hidden';
-//             });
-//         });
+        close.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            body.style.paddingRight = '';
+        })
 
-//         close.addEventListener('click', () => {
+        modal.addEventListener('click', event => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+                body.style.paddingRight = '';
+            }
+        })
+    }
 
-//             modal.style.display = 'none';
-//             document.body.style.overflow = '';
-//         })
-
-//         modal.addEventListener('click', (e) => {
-
-//             if(e.target === modal) {
-//                 modal.style.display = 'none';
-//                 document.body.style.overflow = '';
-//             }
-//         })
-//     }
-
-//     function showModalByTime(selector, time) {
-
-//         setTimeout(() => {
-//             document.querySelector(selector).style.display = 'block';
-//             document.body.style.overflow = 'hidden';
-//         }, time);
-//     }
-
-//     bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
-//     bindModal('.phone_link', '.popup', '.popup .popup_close');
-//     // showModalByTime('.popup', 60000);
-// }
-
+    bindModal('.slide-catalog__btn', '.modal-call', '.form-call-modal__close');
+}
 
 // // Табы
 // const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
