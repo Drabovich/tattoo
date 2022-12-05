@@ -137,7 +137,8 @@
             <h2 class="form-call-modal__title">Личный кабинет</h2>
             <div class="form-call-modal__tell">
                 <label class="form-call-modal__label" for="form-call-modal__input">Введите номер</label>
-                <input id="form-call-modal__input" class="form-call-modal__input" type="tel" placeholder="+7 ХХХ ХХХ ХХ ХХ">
+                <input id="form-call-modal__input" class="form-call-modal__input" type="tel"
+                    placeholder="+7 ХХХ ХХХ ХХ ХХ">
             </div>
             <button type="button" class="btn">Перезвоните мне</button>
             <button type="button" class="form-call-modal__close">
@@ -145,6 +146,36 @@
             </button>
         </form>
     </div>
+
+    <section class="catalog">
+        <div class="catalog__container">
+            <h2 class="catalog__title">Каталог</h2>
+            <div class="catalog__cards">
+                <img class="catalog__item" src="./img/product-1.png" alt="Тату наборы">
+                <img class="catalog__item" src="./img/product-2.png" alt="Держатели">
+                <img class="catalog__item" src="./img/product-3.png" alt="Тату машинки">
+                <img class="catalog__item" src="./img/product-4.png" alt="Педали и провода">
+                <img class="catalog__item" src="./img/product-5.png" alt="Краски">
+                <img class="catalog__item" src="./img/product-6.png" alt="Блоки питания">
+                <img class="catalog__item" src="./img/product-7.png" alt="Наконечники">
+                <img class="catalog__item" src="./img/product-8.png" alt="Тату иглы">
+            </div>
+            <button class="info-btn catalog__btn" type="button">Показать ещё</button>
+        </div>
+    </section>
+
+    <section class="banners">
+        <div class="banners__one">
+            <img src="./img/banners-1.png" alt="Banners-1">
+            <h3 class="banners__title">Краски Lip Nitn</h3>
+            <a href="#" class="banners__link">Смотреть в каталоге</a>
+        </div>
+        <div class="banners__two">
+            <img src="./img/banners-2.png" alt="Banners-2">
+            <h3 class="banners__title">Foxx viper - хит 2021 г.</h3>
+            <a href="#" class="banners__link">Смотреть в каталоге</a>
+        </div>
+    </section>
 
     <section class="store-info">
         <div class="store-info__container">
@@ -173,6 +204,77 @@
                         <button class="info-btn">О компании</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2 class="reviews__title">Отзывы</h2>
+        <div class="reviews-slider">
+            <div class="reviews-slider__line">
+                <div class="reviews-slider__item">
+                    <img src="./img/reviews-foto1.png" alt="Avatar">
+                    <p>
+                        Положили всё необходимое + наклейку, скидочную карту и леденцы, неожиданным было то,
+                        что держатель и клип-корд в наборе пришёл не того цвета, меня даже порадовало, вот только
+                        разочаровала одна упакованная игла, которую не получилось адекватно достать.
+                        В целом всем доволен, буду заказывать ещё.
+                    </p>
+                    <span>@mark_love</span>
+                </div>
+                <div class="reviews-slider__item">
+                    <img src="./img/reviews-foto2.png" alt="Avatar">
+                    <p>
+                        Заказал первый раз, заказ пришёл во время, упаковано все отлично, все заказанное соответствует
+                        описанию, но есть один маленький ньюанс, коробки все мятые, толи при упаковке так случилось толи
+                        на складе так отномятся с товаром, в целом всем доволен, буду заказывать ещё, сайт-магазин
+                        рекомендую к покупкам, в целом всем доволен.
+                    </p>
+                    <span>@Velli7350</span>
+                </div>
+                <div class="reviews-slider__item">
+                    <img src="./img/reviews-foto1.png" alt="Avatar">
+                    <p>
+                        Положили всё необходимое + наклейку, скидочную карту и леденцы, неожиданным было то,
+                        что держатель и клип-корд в наборе пришёл не того цвета, меня даже порадовало, вот только
+                        разочаровала одна упакованная игла, которую не получилось адекватно достать. 
+                        В целом всем доволен, буду заказывать ещё.
+                    </p>
+                    <span>@mark_love</span>
+                </div>
+            </div>
+            <button class="reviews-slider__btn-next">&gt;</button>
+            <button class="reviews-slider__btn-prev">&lt;</button>
+            <div class="reviews-slider__wrapper-dots">
+                <div class="reviews-slider__dot active-dot"></div>
+                <div class="reviews-slider__dot"></div>
+                <div class="reviews-slider__dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mailing-list">
+        <div class="mailing-list__wrapper">
+            <form class="mailing-list__form form-mailing-list">
+                <h2 class="form-mailing-list__title">Узнавайте первыми</h2>
+                <p class="form-mailing-list__text">
+                    Подпишитесь на новостную рассылку
+                    с самыми интересными новостями и акциями
+                </p>
+                <div class="form-mailing-list__inputs">
+                    <div class="form-mailing-list__mail">
+                        <label for="form-mailing-list__mail">Эл. почта</label>
+                        <input id="form-mailing-list__mail" type="email" placeholder="Figur@mail.ru">
+                    </div>
+                    <div class="form-mailing-list__name">
+                        <label for="form-mailing-list__name">Имя</label>
+                        <input id="form-mailing-list__name" type="text" placeholder="Введите имя">
+                    </div>
+                </div>
+                <button type="button" class="form-mailing-list__btn btn">Подписаться</button>
+            </form>
+            <div class="mailing-list__img">
+                <img src="./img/mailing-list-img.png" alt="Tattoo">
             </div>
         </div>
     </section>
@@ -212,7 +314,6 @@
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>

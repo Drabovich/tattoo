@@ -27,12 +27,7 @@ $maxWidth: 1920;
 $maxWidthContainer: 1216;
 
 // Адаптивные свойства!!!
-// @include adaptiv-value ("font-size", start, min);
-// @mixin adaptiv-value($property, $startSize, $minSize) {
-
-//     $addSize: $startSize - $minSize;
-//     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}))
-// }
+// @include adaptiv-value ("font-size", start, min, type);
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
     $addSize: $startSize - $minSize;

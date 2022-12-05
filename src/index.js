@@ -12,6 +12,13 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Скрывание карточек в section Catalog, когда их более 5 
+document.querySelector('.catalog__btn').addEventListener('click', () => {
+    document.querySelectorAll('.catalog__item').forEach(item => item.style.display = 'flex');
+    document.querySelector('.catalog__btn').style.display = 'none';
+})
+
+
 // // Переменные к выпадающему меню (каталог) в header
 // const menuHeaderCatalog = document.querySelector('.menu-header__catalog');
 // const btnCatalog = document.querySelector('.menu-header__burger');

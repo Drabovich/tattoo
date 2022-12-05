@@ -2,12 +2,12 @@
 // Слайдеры
 export const sliders = () => {
 
-    function bindslider(sliderSelector, sliderLineSelector, sliderImgSelector, btnPrevSelector, btnNextSelector, sliderDotSelector, activeDot) {
+    function bindslider(sliderSelector, sliderLineSelector, sliderItemSelector, btnPrevSelector, btnNextSelector, sliderDotSelector, activeDot) {
 
         // Исходные данные по слайдеру (const)
         const slider = document.querySelector(sliderSelector),
             sliderLine = document.querySelector(sliderLineSelector),
-            sliderImages = document.querySelectorAll(sliderImgSelector),
+            sliderItems = document.querySelectorAll(sliderItemSelector),
             sliderBtnPrev = document.querySelector(btnPrevSelector),
             sliderBtnNext = document.querySelector(btnNextSelector),
             sliderDots = document.querySelectorAll(sliderDotSelector);
@@ -34,8 +34,8 @@ export const sliders = () => {
         // Задает нужную ширину картинки и sliderLine
         function showSlid() {
             sliderWidth = slider.offsetWidth;
-            sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
-            sliderImages.forEach(item => item.style.width = sliderWidth + 'px');
+            sliderLine.style.width = sliderWidth * sliderItems.length + 'px';
+            sliderItems.forEach(item => item.style.width = sliderWidth + 'px');
             rollSlider();
         }
         showSlid();
@@ -43,7 +43,7 @@ export const sliders = () => {
         // Перелистывает слайд вперед
         function nextSlide() {
             sliderCount++;
-            if (sliderCount >= sliderImages.length) sliderCount = 0;
+            if (sliderCount >= sliderItems.length) sliderCount = 0;
             rollSlider();
             thisSlide(sliderCount);
         }
@@ -51,7 +51,7 @@ export const sliders = () => {
         // Перелистывает слайд назад
         function prevSlide() {
             sliderCount--;
-            if (sliderCount < 0) sliderCount = sliderImages.length -1;
+            if (sliderCount < 0) sliderCount = sliderItems.length -1;
             rollSlider();
             thisSlide(sliderCount);
         }
@@ -76,6 +76,9 @@ export const sliders = () => {
             })
         })
     }
-    
+    // Слайдер с фото татумашинок
     bindslider('.slider', '.slider__line', '.slider__img', '.slider__btn-prev', '.slider__btn-next', '.slider__dot', 'active-dot');
+    
+    // Слайдер с отзывами
+    bindslider('.reviews-slider', '.reviews-slider__line', '.reviews-slider__item', '.reviews-slider__btn-prev', '.reviews-slider__btn-next', '.reviews-slider__dot', 'active-dot');
 }

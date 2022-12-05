@@ -1,0 +1,154 @@
+// Секция с отзывами со слайдером
+.reviews{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+
+    &__title {
+        font-family: 'Forum-Regular';
+        @include adaptiv-value ("font-size", 60, 25, 0);
+        @include adaptiv-value ("margin-bottom", 50, 30, 0);
+        line-height: lh(60, 60);
+        color: $darkColor;
+    }
+
+    .reviews-slider{
+        max-width: 700px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        &__line{
+            display: flex;
+            align-items: flex-end;
+            transition: all 1s;
+
+            .reviews-slider__item{
+                display: flex;
+                flex-direction: column;
+                background-color: #050402;
+                border: 2px solid $hoverLink;
+                padding: 50px 50px 0 50px;
+                position: relative;
+
+                @media (max-width: 770px) {
+                    padding: 30px 30px 0 40px;
+                }
+
+                @media (max-width: 500px) {
+                    padding: 0;
+                }
+
+                img{
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                }
+
+                p{
+                    @include adaptiv-value ("font-size", 20, 15, 0);
+                    line-height: lh(26, 20);
+                    color: $greyColor;
+                    margin: 0 0 35px 0;
+                    font-family: 'Jost-Regular';
+
+                    @media (max-width: 500px) {
+                        margin: 30px 30px 20px 40px;
+                    }
+                }
+
+                span{
+                    display: flex;
+                    align-items: center;
+                    font-family: 'Forum-Regular';
+                    color: $hoverLink;
+                    font-size: 20px;
+                    line-height: lh(26, 20);
+                    @include adaptiv-value ("margin-bottom", 50, 40, 0);
+
+                    @media (max-width: 500px) {
+                        margin-left: 10px;
+                        font-size: 17px;
+                    }
+
+                    &::before{
+                        content: url(./img/inst.svg);
+                        width: 28px;
+                        height: 28px;
+                        margin: 0 15px 0 0;
+                    }
+                }
+            }
+        }
+
+        &__btn-next{
+            position: absolute;
+            top: 50%;
+            right: 3px;
+            padding: 0 10px;
+            transform: translateY(-50%);
+            border: none;
+            color: $hoverLink;
+            background-color: transparent;
+            @include adaptiv-value ("font-size", 30, 25, 0);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #bb8b5f42;
+                }
+            }
+        }
+
+        &__btn-prev{
+            position: absolute;
+            top: 50%;
+            left: 3px;
+            padding: 0 10px;
+            transform: translateY(-50%);
+            border: none;
+            color: $hoverLink;
+            background-color: transparent;
+            @include adaptiv-value ("font-size", 30, 25, 0);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #bb8b5f42;
+                }
+            }
+        }
+
+        &__wrapper-dots{
+            display: flex;
+            column-gap: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+
+            @media (max-width: 500px) {
+                column-gap: 5px;
+                bottom: 10px;
+            }
+
+            .reviews-slider__dot{
+                width: 16px;
+                height: 16px;
+                border: 2px solid $btnCatalog;
+
+                @media (max-width: 500px) {
+                    width: 13px;
+                    height: 13px;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        background-color: $hoverLink;
+                    }
+                }
+            }
+        }
+    }
+    
+}
