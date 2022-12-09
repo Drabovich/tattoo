@@ -49,6 +49,15 @@ $maxWidthContainer: 1216;
     }
 }
 
+// @include adaptiv-personal ("font-size", $startSize, $minSize, $maxScreenResolution);
+@mixin adaptiv-personal($property, $startSize, $minSize, $maxScreenResolution) {
+    $addSize: $startSize - $minSize;
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxScreenResolution + px}) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxScreenResolution - 320}));
+    }
+}
+
 // Переменные цветов
 $background: #030201;
 $backgroundWhite: #EEEEEE;
@@ -57,6 +66,10 @@ $greyColor: #D0D0D0;
 $hoverLink: #BB8C5F;
 $darkColor: #3E424B;
 $btnCatalog: #524336;
+
+.hidden {
+    display: none !important;
+}
 
 
 

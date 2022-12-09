@@ -13,7 +13,7 @@ export const modals = () => {
         if (trigger.length > 0) {
             trigger.forEach(item => item.addEventListener('click', event => {
                 if (event.target) event.preventDefault();
-                modal.style.display = 'flex';
+                modal.classList.remove('hidden');
                 widthScroll = window.innerWidth - modal.offsetWidth + 'px';
                 document.body.style.overflow = 'hidden';
                 body.style.paddingRight = widthScroll;
@@ -21,14 +21,14 @@ export const modals = () => {
         }
 
         close.addEventListener('click', () => {
-            modal.style.display = 'none';
+            modal.classList.add('hidden');
             document.body.style.overflow = '';
             body.style.paddingRight = '';
         })
 
         modal.addEventListener('click', event => {
             if (event.target === modal) {
-                modal.style.display = 'none';
+                modal.classList.add('hidden');
                 document.body.style.overflow = '';
                 body.style.paddingRight = '';
             }
@@ -37,43 +37,4 @@ export const modals = () => {
 
     bindModal('.slide-catalog__btn', '.modal-call', '.form-call-modal__close');
 }
-
-// // Табы
-// const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
-//     const header = document.querySelector(headerSelector),
-//         tab = document.querySelectorAll(tabSelector),
-//         content = document.querySelectorAll(contentSelector);
-
-//         function hideTabContent() {
-//             content.forEach(item => {
-//                 item.style.display = 'none';
-//             });
-
-//             tab.forEach(item => {
-//                 item.classList.remove(activeClass);
-//             })
-//         }
-
-//         function showTabContent(i = 0) {
-//             content[i].style.display = 'block';
-//             tab[i].classList.add(activeClass);
-//         }
-
-//         hideTabContent();
-//         showTabContent();
-
-//         header.addEventListener('click', (e) => {
-//             const target = e.target;
-
-//             if (target && (target.classList.contains(tabSelector.replace(/\./, '')) ||
-//                 target.parentNode.classList.contains(tabSelector.replace(/\./, '')))) {
-//                     tab.forEach((item, i) =>{
-//                         if (target == item || target.parentNode == item) {
-//                             hideTabContent();
-//                             showTabContent(i);
-//                         }
-//                     })
-//                 }
-//         })
-// }
 

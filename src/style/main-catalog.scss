@@ -1,0 +1,171 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    @include adaptiv-value ("padding-top", 120, 80, 1);
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1216px;
+        width: 100%;
+
+        .main__cards{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(4, minmax(270px, 289px));
+            grid-template-rows: minmax(455px, auto);
+            grid-auto-rows: minmax(455px, auto);
+            gap: 20px;
+            width: 100%;
+
+            @media (max-width: 1160px) {
+                grid-template-columns: repeat(3, minmax(270px, 289px));
+            }
+
+            @media (max-width: 885px) {
+                grid-template-columns: repeat(3, minmax(220px, 229px));
+                grid-template-rows: minmax(403px, auto);
+                grid-auto-rows: minmax(403px, auto);
+            }
+
+            @media (max-width: 715px) {
+                grid-template-columns: repeat(2, minmax(220px, 229px));
+            }
+
+            @media (max-width: 500px) {
+                grid-template-columns: 280px;
+            }
+
+            .card-main{
+                display: flex;
+                flex-direction: column;
+                max-width: 289px;
+                width: 100%;
+                min-height: 455px;
+                background-color: #F5F5F5;
+                position: relative;
+
+                &:not(:nth-child(-n+8)) {
+                    display: none;
+                }
+
+                @media (max-width: 1160px) {
+                    &:not(:nth-child(-n+6)) {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 885px) {
+                    max-width: 229px;
+                    min-height: 403px;
+                }
+
+                @media (max-width: 715px) {
+                    &:not(:nth-child(-n+4)) {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 500px) {
+                    max-width: 280px;
+                }
+
+                &__img{
+                    max-width: 289px;
+                    width: 100%;
+                    min-height: 228px;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media (max-width: 885px) {
+                        max-width: 229px;
+                    }
+
+                    @media (max-width: 500px) {
+                        max-width: 280px;
+                    }
+
+                    img{
+                        max-width: 289px;
+                        width: 100%;
+
+                        @media (max-width: 885px) {
+                            max-width: 229px;
+                        }
+
+                        @media (max-width: 500px) {
+                            max-width: 280px;
+                        }
+                    }
+                }
+
+                &__title{
+                    max-width: 230px;
+                    width: 100%;
+                    min-height: 50px;
+                    font-family: 'Jost-Regular';
+                    font-size: 17px;
+                    line-height: lh(24, 17);
+                    color: $darkColor;
+                    margin: 25px 0 10px 30px;
+
+                    @media (max-width: 885px) {
+                        font-size: 15px;
+                        margin: 8px 0 8px 30px;
+                        max-width: 169px;
+                        min-height: 42px;
+                    }
+                }
+
+                &__price{
+                    font-family: 'Jost-Bold';
+                    color: $hoverLink;
+                    font-size: 24px;
+                    line-height: lh(31, 24);
+                    margin: 0 0 15px 30px;
+                }
+
+                &__btn{
+                    width: 230px;
+                    height: 50px;
+                    margin: auto auto 30px;
+
+                    @media (max-width: 885px) {
+                        margin: auto auto 20px;
+                        width: 200px;
+                    }
+
+                    @media (max-width: 500px) {
+                        width: 230px;
+                    }
+                }
+
+                &__like{
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    font-size: 30px;
+                    color: $greyColor;
+
+                    &:hover{
+                        color: $hoverLink;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .main__btn{
+            @include adaptiv-value ("margin-top", 50, 30, 1);
+            height: 50px;
+        }
+    }
+}
+
+

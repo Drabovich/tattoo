@@ -1,1 +1,1 @@
-import"./index.html";import"./index.scss";import"./modules/slider";import"./modules/modals";
+import"./index.html";import"./index.scss";import"./modules/slider";import{modals}from"./modules/modals";import{sliders}from"./modules/slider";window.addEventListener("DOMContentLoaded",(()=>{modals(),sliders()})),document.querySelector(".catalog__btn").addEventListener("click",(()=>{document.querySelectorAll(".catalog__item").forEach((e=>e.style.display="flex")),document.querySelector(".catalog__btn").style.display="none"}));

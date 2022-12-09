@@ -18,7 +18,7 @@ export const sliders = () => {
 
 
         // Адаптивность слайдера
-            window.addEventListener('resize', showSlid);
+            window.addEventListener('resize', showSlide);
 
         // Кнопки листания слайдов вперед и назад
             sliderBtnNext.addEventListener('click', nextSlide);
@@ -32,13 +32,13 @@ export const sliders = () => {
 
         // Функции ==================
         // Задает нужную ширину картинки и sliderLine
-        function showSlid() {
+        function showSlide() {
             sliderWidth = slider.offsetWidth;
             sliderLine.style.width = sliderWidth * sliderItems.length + 'px';
             sliderItems.forEach(item => item.style.width = sliderWidth + 'px');
             rollSlider();
         }
-        showSlid();
+        showSlide();
 
         // Перелистывает слайд вперед
         function nextSlide() {
