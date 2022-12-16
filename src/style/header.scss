@@ -214,19 +214,62 @@
             display: flex;
             align-items: center;
 
-            span{
+            .top-header__cart-price{
+                margin: 0 10px 0 0;
                 line-height: 23px;
-                font-size: 15px;
-                font-family: 'Jost-Regular';
-                color: $whiteColor;
-                margin: 0 5px 0 0;
+                    font-size: 15px;
+                    font-family: 'Jost-Regular';
+                    color: $whiteColor;
+
+                    strong {
+                        font-weight: normal;
+                    }
+            }
+
+            a{
+                position: relative;
+
+                &:hover {
+                    svg path {
+                        fill: $hoverLink;
+                    }
+                }
+
+                span{
+                    position: absolute;
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: $whiteColor;
+                    background: $hoverLink;
+                    padding: 0 5px;
+                    top: -13px;
+                    right: -15px;
+                }
             }
         }
 
         .top-header__like {
             display: flex;
             align-items: center;
+            position: relative;
             margin: 0 50px;
+
+            span{
+                position: absolute;
+                font-size: 14px;
+                line-height: 19px;
+                color: $whiteColor;
+                background: $hoverLink;
+                padding: 0 5px;
+                top: -10px;
+                right: -15px;
+            }
+
+            &:hover {
+                svg path {
+                    fill: $hoverLink;
+                }
+            }
 
             @media (max-width: 450px) {
                 margin: 0 25px;
@@ -236,6 +279,14 @@
         .top-header__person {
             display: flex;
             align-items: center;
+
+            a{
+                &:hover {
+                    svg path, svg circle{
+                        stroke: $hoverLink;
+                    }
+                }
+            }
         }
     }
 }

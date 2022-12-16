@@ -28,25 +28,27 @@ window.addEventListener('click', event => {
 
 
 // Перемещение поиска на всех разрешениях при адаптиве
-window.addEventListener('resize', () => moveSearch());
-
-function moveSearch() {
-    const headerSearch = document.querySelector('.menu-header__search'),
+const headerSearch = document.querySelector('.menu-header__search'),
         headerTop = document.querySelector('.header__top'),
-        headerMenu = document.querySelector('.menu-header'),
-        viewport = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        headerMenu = document.querySelector('.menu-header');
 
-    if (viewport <= 600) {
-        headerMenu.insertBefore(headerSearch, headerMenu.children[3])
-    } else if (viewport <= 900 && window.innerWidth > 600) {
+if (window.innerWidth <= 600) {
+    headerMenu.insertBefore(headerSearch, headerMenu.children[3])
+} else if (window.innerWidth <= 900 && window.innerWidth > 600) {
+    headerTop.insertBefore(headerSearch, headerTop.children[1])
+} else {
+    headerMenu.insertBefore(headerSearch, headerMenu.children[1])
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 600) {
+        headerMenu.insertBefore(headerSearch, headerMenu.children[2])
+    } else if (window.innerWidth <= 900 && window.innerWidth > 600) {
         headerTop.insertBefore(headerSearch, headerTop.children[1])
     } else {
         headerMenu.insertBefore(headerSearch, headerMenu.children[1])
     }
-}
-moveSearch();
-
-
+});
 
 
 
