@@ -4,8 +4,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    @include adaptiv-value ("padding-top", 100, 60, 0);
-    @include adaptiv-value ("padding-bottom", 200, 120, 0);
+    @include adaptiv-value ("padding-top", 100, 60, 1);
+    @include adaptiv-value ("padding-bottom", 200, 100, 1);
 
     &__wrapper{
         display: flex;

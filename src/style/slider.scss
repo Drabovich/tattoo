@@ -5,8 +5,8 @@
     align-items: center;
     width: 100%;
     background-color: $background;
-    @include adaptiv-value ("padding-top", 100, 60, 1);
-    @include adaptiv-value ("padding-bottom", 100, 60, 1);
+    @include adaptiv-value ("padding-top", 50, 20, 1);
+    @include adaptiv-value ("padding-bottom", 50, 20, 1);
     padding-left: 10px;
     padding-right: 10px;
 

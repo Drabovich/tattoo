@@ -520,6 +520,11 @@
                             font-size: 17px;
                             color: $darkColor;
 
+                            &:hover{
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+
                             @media (max-width: 900px) {
                                 color: $whiteColor;
                             }

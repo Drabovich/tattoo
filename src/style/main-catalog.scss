@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    @include adaptiv-value ("padding-top", 120, 80, 1);
+    @include adaptiv-value ("padding-top", 120, 60, 1);
     padding-left: 10px;
     padding-right: 10px;
 
@@ -150,12 +150,17 @@
                     position: absolute;
                     top: 20px;
                     right: 30px;
-                    font-size: 30px;
-                    color: $greyColor;
+
+                    svg path {
+                        fill: #524336;
+                    }
 
                     &:hover{
-                        color: $hoverLink;
                         cursor: pointer;
+
+                        svg path {
+                            fill: $hoverLink;
+                        }
                     }
                 }
             }

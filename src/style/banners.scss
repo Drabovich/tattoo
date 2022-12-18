@@ -4,7 +4,7 @@
     justify-content: space-between;
     column-gap: 20px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         column-gap: 0;
         flex-direction: column;
         row-gap: 20px;
@@ -15,29 +15,52 @@
     }
 
     &__one{
+        width: 100%;
         position: relative;
-
-        img{
+        
+        .banners__img1{
             width: 100%;
-            min-height: 300px;
+
+            img{
+                width: 100%;
+                min-height: 300px;
+                max-height: 470px;
+            }
+
+            @media (max-width: 450px) {
+                display: none;
+            }
+        }
+
+        .banners__img2{
+            display: none;
+
+            @media (max-width: 450px) {
+                display: block;
+            }
+
+            img{
+                width: 100%;
+                height: 300px;
+            }
         }
 
         .banners__title{
             position: absolute;
-            @include adaptiv-value ("top", 40, 30, 0);
-            @include adaptiv-value ("left", 50, 20, 0);
+            @include adaptiv-value ("top", 40, 30, 1);
+            @include adaptiv-value ("left", 50, 20, 1);
             font-family: 'Jost-Bold';
             line-height: lh(52, 40);
             color: $whiteColor;
-            @include adaptiv-value ("font-size", 40, 25, 0);
+            @include adaptiv-value ("font-size", 40, 25, 1);
         }
 
         .banners__link{
             position: absolute;
             bottom: 50px;
-            @include adaptiv-value ("left", 50, 20, 0);
+            @include adaptiv-value ("left", 50, 20, 1);
             font-family: 'Jost-Regular';
-            @include adaptiv-value ("font-size", 26, 20, 0);
+            @include adaptiv-value ("font-size", 26, 20, 1);
             color: $hoverLink;
             line-height: lh(32, 26);
             text-decoration: underline;
@@ -45,23 +68,46 @@
     }
 
     &__two{
+        width: 100%;
         position: relative;
 
-        img{
+        .banners__img1{
             width: 100%;
-            min-height: 300px;
+
+            img{
+                width: 100%;
+                min-height: 300px;
+                max-height: 470px;
+            }
+
+            @media (max-width: 450px) {
+                display: none;
+            }
+        }
+
+        .banners__img2{
+            display: none;
+
+            @media (max-width: 450px) {
+                display: block;
+            }
+
+            img{
+                width: 100%;
+                height: 300px;
+            }
         }
 
         .banners__title{
             max-width: 270px;
             width: 100%;
             position: absolute;
-            @include adaptiv-value ("top", 40, 30, 0);
-            @include adaptiv-value ("left", 50, 20, 0);
+            @include adaptiv-value ("top", 40, 30, 1);
+            @include adaptiv-value ("left", 50, 20, 1);
             font-family: 'Jost-Bold';
             line-height: lh(52, 40);
             color: $whiteColor;
-            @include adaptiv-value ("font-size", 40, 25, 0);
+            @include adaptiv-value ("font-size", 40, 25, 1);
 
             @media (max-width: 800px) {
                 max-width: 200px;
@@ -71,9 +117,9 @@
         .banners__link{
             position: absolute;
             bottom: 50px;
-            @include adaptiv-value ("left", 50, 20, 0);
+            @include adaptiv-value ("left", 50, 20, 1);
             font-family: 'Jost-Regular';
-            @include adaptiv-value ("font-size", 26, 20, 0);
+            @include adaptiv-value ("font-size", 26, 20, 1);
             color: $hoverLink;
             line-height: lh(32, 26);
             text-decoration: underline;

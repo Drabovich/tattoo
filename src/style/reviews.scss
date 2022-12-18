@@ -40,7 +40,7 @@
                 }
 
                 p{
-                    @include adaptiv-value ("font-size", 20, 15, 0);
+                    @include adaptiv-value ("font-size", 20, 15, 1);
                     line-height: lh(26, 20);
                     color: $greyColor;
                     margin: 0 0 35px 0;
@@ -58,7 +58,7 @@
                     color: $hoverLink;
                     font-size: 20px;
                     line-height: lh(26, 20);
-                    @include adaptiv-value ("margin-bottom", 50, 40, 0);
+                    @include adaptiv-value ("margin-bottom", 50, 40, 1);
 
                     @media (max-width: 500px) {
                         margin-left: 10px;
@@ -84,7 +84,7 @@
             border: none;
             color: $hoverLink;
             background-color: transparent;
-            @include adaptiv-value ("font-size", 30, 25, 0);
+            @include adaptiv-value ("font-size", 30, 25, 1);
 
             @media (any-hover: hover) {
                 &:hover {
@@ -102,7 +102,7 @@
             border: none;
             color: $hoverLink;
             background-color: transparent;
-            @include adaptiv-value ("font-size", 30, 25, 0);
+            @include adaptiv-value ("font-size", 30, 25, 1);
 
             @media (any-hover: hover) {
                 &:hover {

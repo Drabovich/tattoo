@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include adaptiv-value ("padding-top", 120, 60, 0);
-    @include adaptiv-value ("padding-bottom", 120, 60, 0);
+    @include adaptiv-value ("padding-top", 120, 60, 1);
+    @include adaptiv-value ("padding-bottom", 120, 60, 1);
     padding-left: 10px;
     padding-right: 10px;
 

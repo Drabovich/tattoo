@@ -3,8 +3,8 @@
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    @include adaptiv-value ("padding-top", 120, 60, 0);
-    @include adaptiv-value ("padding-bottom", 120, 60, 0);
+    @include adaptiv-value ("padding-top", 120, 60, 1);
+    @include adaptiv-value ("padding-bottom", 120, 60, 1);
 
     @media (max-width: 1570px) {
         justify-content: center;
@@ -66,7 +66,7 @@
                 .content-info__title {
                     h2{
                         font-family: 'Forum-Regular';
-                        @include adaptiv-value ("font-size", 50, 25, 0);
+                        @include adaptiv-value ("font-size", 50, 25, 1);
                         line-height: lh(65, 50);
                         color: $hoverLink;
                     }
@@ -75,7 +75,7 @@
                 .content-info__text {
                     p{
                         font-family: 'Jost-Regular';
-                        @include adaptiv-value ("font-size", 17, 15, 0);
+                        @include adaptiv-value ("font-size", 17, 15, 1);
                         line-height: lh(24, 17);
                         color: $darkColor;
                     }

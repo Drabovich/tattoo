@@ -45,7 +45,10 @@ $maxWidthContainer: 1216;
         }
     } @else {
         // Всегда 
-        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidth + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
     }
 }
 
