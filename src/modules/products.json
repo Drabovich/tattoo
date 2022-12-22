@@ -1,0 +1,10 @@
+[
+	{
+		"id": 1,
+		"title": "Филадельфия хит ролл",
+		"itemsInBox": 6,
+		"weight": 180,
+		"price": 300,
+		"imgSrc": "philadelphia.jpg"
+	}
+]

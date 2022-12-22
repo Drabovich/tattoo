@@ -1,6 +1,8 @@
 import './index.html';
 import './index.scss';
 import './modules/header';
+import './modules/main-cards';
+import './modules/cart';
 import { modals } from './modules/modals';
 import { sliders } from './modules/slider';
 import { tabs } from './modules/tabs';

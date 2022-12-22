@@ -39,7 +39,7 @@
                             <strong>5000</strong>
                             <span>₽</span>
                         </div>
-                        <a href="#">
+                        <a class="open-cart" href="#">
                             <span>1</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
@@ -407,6 +407,77 @@
             <button class="main__btn info-btn" type="button">Показать ещё</button>
         </div>
     </main>
+
+    <div class="modal-main hidden">
+        <div class="modal-main__body">
+            <h2>Товар добавлен в корзину</h2>
+            <p>Необходимое количество товара можно выбрать при оформлении заказа</p>
+            <div class="modal-main__btns">
+                <button id="btn-modal-open-cart" class="btn open-cart">Перейти в корзину</button>
+                <div class="modal-main__btn-catalog">
+                    <span class="modal-close">Вернуться в каталог</span>
+                </div>
+            </div>
+            <button type="button" class="modal-main__close modal-close">
+                <img src="./img/close-call-modal.svg" alt="Close">
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-cart hidden">
+        <div class="modal-cart__wrapper">
+            <div class="modal-cart__title">
+                <h2>Корзина</h2>
+                <span class="modal-cart__close">Вернуться в каталог</span>
+            </div>
+            <div class="modal-cart__inner">
+                <ul class="modal-cart__top">
+                    <li>Наименование</li>
+                    <li>Цена</li>
+                    <li>Количество</li>
+                    <li>Стоимость</li>
+                </ul>
+                <div class="modal-cart__products">
+                    <div class="cart-product">
+                        <div class="cart-product__content">
+                            <img src="./img/card-main-1.png" alt="Cart Product">
+                            <p>Foxxx Viper Fox Golden Vintage Lot #1 RCA</p>
+                        </div>
+                        <div class="cart-product__price">
+                            <span><i>Цена:&nbsp;</i>3000</span>₽
+                        </div>
+                        <div class="cart-product__all-price">
+                            <div class="cart-product__wrapper">
+                                <div class="cart-product__control" data-action="minus">
+                                    <img src="./img/minus.svg" alt="Minus">
+                                </div>
+                                <div class="cart-product__current" data-counter>1</div>
+                                <div class="cart-product__control" data-action="plus">
+                                    <img src="./img/plus.svg" alt="Plus">
+                                </div>
+                            </div>
+                            <div class="cart-product__cena">
+                                <span><i>Стоимость:&nbsp;</i>3000</span>₽
+                            </div>
+                        </div>
+                        <div class="cart-product__close">
+                            <img src="./img/close-call-modal.svg" alt="Close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-cart__price">
+                <ul>
+                    <li><p>Всего единиц товара:</p><span>0</span></li>
+                    <li><p>Общая скидка:</p><span>0</span>₽</li>
+                    <li><p>Доп. услуги</p><span>0</span>₽</li>
+                    <li><p>Итого:</p><span>0</span>₽</li>
+                </ul>
+                <button class="btn">Оформить заказ</button>
+            </div>
+            <br><br><br><br><br><br>
+        </div>
+    </div>
 
     <section class="catalog">
         <div class="catalog__container">

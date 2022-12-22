@@ -20,6 +20,7 @@
         width: 100%;
         min-height: 160px;
         margin: 0 10px;
+        z-index: 15;
 
         @media (max-width: 900px) {
             min-height: 80px;
@@ -314,9 +315,15 @@
         overflow: auto;
         z-index: 20;
         border-top: 1px solid #524336;
+        // opacity: 0;
+        // visibility: hidden;
+        // pointer-events: none;
 
         &.active {
             left: 0;
+            // opacity: 1;
+            // visibility: visible;
+            // pointer-events: all;
         }
     }
 

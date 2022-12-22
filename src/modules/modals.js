@@ -6,7 +6,7 @@ export const modals = () => {
 
         const trigger = document.querySelectorAll(triggerSelector), 
             modal = document.querySelector(modalSelector),
-            close = document.querySelector(closeSelector),
+            close = document.querySelectorAll(closeSelector),
             body = document.querySelector('body');
         let widthScroll;
 
@@ -20,11 +20,14 @@ export const modals = () => {
             }));
         }
 
-        close.addEventListener('click', () => {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-            body.style.paddingRight = '';
-        })
+        if (close.length > 0) {
+            close.forEach(item => item.addEventListener('click', event => {
+                if (event.target) event.preventDefault();
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+                body.style.paddingRight = '';
+            }))
+        }   
 
         modal.addEventListener('click', event => {
             if (event.target === modal) {
@@ -36,5 +39,7 @@ export const modals = () => {
     }
 
     bindModal('.slide-catalog__btn', '.modal-call', '.form-call-modal__close');
+    bindModal('.card-main__btn', '.modal-main', '.modal-close');
 }
+
 
