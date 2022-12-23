@@ -5,10 +5,9 @@ const openCartBtn = document.querySelectorAll('.open-cart'),
     body = document.querySelector('body');
     modalCartCloseBtn = document.querySelector('.modal-cart__close');
 
+const cartWrapper = document.querySelector('.modal-cart__products');
 
-// const btnMinus = document.querySelectorAll('[data-action="minus"]');
-// const btnPlus = document.querySelectorAll('[data-action="plus"]');
-// const cartWrapper = document.querySelector('.cart-wrapper');
+
 
 window.addEventListener('click', (event) => {
     
@@ -28,6 +27,55 @@ window.addEventListener('click', (event) => {
     if (event.target.dataset.action === 'close') {
         const cartProduct = event.target.closest('.cart-product');
         cartProduct.remove()
+    }
+
+    if (event.target.hasAttribute('data-cart')) {
+        let card = event.target.closest('.card-main');
+
+        const productInfo = {
+            id: card.dataset.id,
+            imgSrc: card.querySelector('.card-main__img img').getAttribute('src'),
+            title: card.querySelector('.card-main__title').innerText,
+            price: card.querySelector('.card-main__price').innerText,
+        }
+
+        let itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);
+
+        if (itemInCart) {
+            const counterElement = itemInCart.querySelector('[data-counter]');
+            counterElement.innerText = parseInt(counterElement.innerText) + 1;
+
+        } else {
+            let cartItemHTML = `
+                <div class="cart-product" data-id="${productInfo.id}">
+                    <div class="cart-product__content">
+                        <img src="${productInfo.imgSrc}">
+                        <p>${productInfo.title}</p>
+                    </div>
+                    <div class="cart-product__price">
+                        <span><i>Цена:&nbsp;</i>${productInfo.price}</span>
+                    </div>
+                    <div class="cart-product__all-price">
+                        <div class="cart-product__wrapper">
+                            <div class="cart-product__control" data-action="minus">
+                                <img src="./assets/img/minus.svg" alt="Minus">
+                            </div>
+                            <div class="cart-product__current" data-counter>1</div>
+                            <div class="cart-product__control" data-action="plus">
+                                <img src="./assets/img/plus.svg" alt="Plus">
+                            </div>
+                        </div>
+                        <div class="cart-product__cena">
+                            <span><i>Стоимость:&nbsp;</i>3000</span>₽
+                        </div>
+                    </div>
+                    <div class="cart-product__close" data-action="close">
+                        <img src="./assets/img/close-call-modal.svg" alt="Close">
+                    </div>
+                </div>`
+
+            cartWrapper.insertAdjacentHTML("beforeend", cartItemHTML);
+        }
     }
 })
 

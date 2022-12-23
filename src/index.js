@@ -8,6 +8,17 @@ import { modals } from './modules/modals';
 import { sliders } from './modules/slider';
 import { tabs } from './modules/tabs';
 
+import './img/card-main-1.png';
+import './img/card-main-2.png';
+import './img/card-main-3.png';
+import './img/card-main-4.png';
+import './img/card-main-5.png';
+import './img/card-main-6.png';
+import './img/card-main-7.png';
+import './img/card-main-8.png';
+import './img/plus.svg';
+import './img/minus.svg';
+
 window.addEventListener('DOMContentLoaded', () => {
     modals();
     sliders();

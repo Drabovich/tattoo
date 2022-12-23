@@ -2,20 +2,18 @@ import { CATALOG } from './catalog.js';
 
 const productsContainer = document.querySelector('.main__cards');
 
-
-
-renderProducts(CATALOG)
+renderProducts(CATALOG);
 
 function renderProducts(arr) {
     arr.forEach(function (item) {
         const productHTML = `
         <div class="card-main" data-id="${item.id}">
             <div class="card-main__img">
-            <img src="./assets/${item.imgSrc}">
+            <img src="./assets/img/${item.imgSrc}">
             </div>
             <h3 class="card-main__title">${item.title}</h3>
             <div class="card-main__price">${item.price} ₽</div>
-            <button class="info-btn card-main__btn" type="button">Добавить в корзину</button>
+            <button class="info-btn card-main__btn" type="button" data-cart>Добавить в корзину</button>
             <span class="card-main__like">
             <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
