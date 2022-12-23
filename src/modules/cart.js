@@ -5,6 +5,61 @@ const openCartBtn = document.querySelectorAll('.open-cart'),
     body = document.querySelector('body');
     modalCartCloseBtn = document.querySelector('.modal-cart__close');
 
+
+// const btnMinus = document.querySelectorAll('[data-action="minus"]');
+// const btnPlus = document.querySelectorAll('[data-action="plus"]');
+// const cartWrapper = document.querySelector('.cart-wrapper');
+
+window.addEventListener('click', (event) => {
+    
+    if (event.target.dataset.action === 'plus' 
+    || event.target.dataset.action === 'minus') {
+
+        const cartProductWrapper = event.target.closest('.cart-product__wrapper');
+        let counter = cartProductWrapper.querySelector('[data-counter]');
+    
+        if (event.target.dataset.action === 'plus') counter.innerText = ++counter.innerText;
+
+        if (event.target.dataset.action === 'minus') {
+            if (counter.innerText > 1) counter.innerText = --counter.innerText;
+        }
+    }
+
+    if (event.target.dataset.action === 'close') {
+        const cartProduct = event.target.closest('.cart-product');
+        cartProduct.remove()
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Перейти в корзину с мод. окна при нажатии на #btn-modal-open-cart
 document.querySelector('#btn-modal-open-cart').addEventListener('click', () => {
     document.querySelector('.modal-main').classList.add('hidden');
