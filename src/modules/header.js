@@ -17,7 +17,7 @@ btnCatalog.addEventListener('click', () => {
     menuHeaderCatalog.classList.toggle('open-catalog')
 });
 
-window.addEventListener('click', event => {  
+document.addEventListener('click', event => {  
     // Закрытие меню (каталог) в header
     if (menuHeaderCatalog.classList.contains('open-catalog') 
     && event.target !== btnCatalog
