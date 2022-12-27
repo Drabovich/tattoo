@@ -231,9 +231,11 @@
             a{
                 position: relative;
 
-                &:hover {
-                    svg path {
-                        fill: $hoverLink;
+                @media (any-hover: hover) {
+                    &:hover {
+                        svg path {
+                            fill: $hoverLink;
+                        }
                     }
                 }
 
@@ -267,9 +269,11 @@
                 right: -15px;
             }
 
-            &:hover {
-                svg path {
-                    fill: $hoverLink;
+            @media (any-hover: hover) {
+                &:hover {
+                    svg path {
+                        fill: $hoverLink;
+                    }
                 }
             }
 
@@ -283,9 +287,11 @@
             align-items: center;
 
             a{
-                &:hover {
-                    svg path, svg circle{
-                        stroke: $hoverLink;
+                @media (any-hover: hover) {
+                    &:hover {
+                        svg path, svg circle{
+                            stroke: $hoverLink;
+                        }
                     }
                 }
             }
@@ -361,6 +367,11 @@
                 width: 0;
                 height: 0;
                 transition: transform 0.3s ease 0s;
+                transform: rotate(0);
+
+                &.rotate-arow{
+                    transform: rotate(180deg);
+                }
             }
 
             & span, &::before, &::after{
@@ -673,13 +684,15 @@
                 align-items: center;
                 margin: 0 0 20px 0;
 
-                &:hover{
-                    .contacts-header__icon-tell svg path{
-                        stroke: $hoverLink;
-                    }
-
-                    span{
-                        color: $hoverLink;
+                @media (any-hover: hover) {
+                    &:hover{
+                        .contacts-header__icon-tell svg path{
+                            stroke: $hoverLink;
+                        }
+    
+                        span{
+                            color: $hoverLink;
+                        }
                     }
                 }
 
@@ -724,13 +737,15 @@
                 display: flex;
                 align-items: center;
 
-                &:hover{
-                    .contacts-header__icon-mail svg path{
-                        fill: $hoverLink;
-                    }
-
-                    span{
-                        color: $hoverLink;
+                @media (any-hover: hover) {
+                    &:hover{
+                        .contacts-header__icon-mail svg path{
+                            fill: $hoverLink;
+                        }
+    
+                        span{
+                            color: $hoverLink;
+                        }
                     }
                 }
 

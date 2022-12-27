@@ -36,3 +36,8 @@ document.querySelector('.main__btn').addEventListener('click', () => {
     document.querySelectorAll('.card-main').forEach(item => item.style.display = 'grid');
     document.querySelector('.main__btn').classList.add('hidden');
 });
+
+// Убираем клик не рабочих ссылок в блоке 2 банеров и футере
+document.querySelectorAll('.link-lock').forEach(item => {
+    item.addEventListener('click', (event) => event.preventDefault())
+})

@@ -157,11 +157,13 @@
                         fill: #524336;
                     }
 
-                    &:hover{
-                        cursor: pointer;
-
-                        svg path {
-                            fill: $hoverLink;
+                    @media (any-hover: hover) {
+                        &:hover{
+                            cursor: pointer;
+    
+                            svg path {
+                                fill: $hoverLink;
+                            }
                         }
                     }
                 }
