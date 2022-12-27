@@ -20,6 +20,9 @@ body {
 // Общие кнопки всего проекта ===============
 // Кнопка "открыть каталог"
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $btnCatalog;
     border: 2px solid $hoverLink;
     max-width: 275px;

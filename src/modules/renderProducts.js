@@ -12,7 +12,7 @@ function renderProducts(arr) {
             <img src="./assets/img/${item.imgSrc}">
             </div>
             <h3 class="card-main__title">${item.title}</h3>
-            <div class="card-main__price">${item.price} ₽</div>
+            <div class="card-main__price"><span>${item.price}</span> ₽</div>
             <button class="info-btn card-main__btn" type="button" data-cart>Добавить в корзину</button>
             <span class="card-main__like">
             <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">

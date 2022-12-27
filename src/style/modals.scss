@@ -485,6 +485,10 @@
                             margin: 20px 0;
                         }
 
+                        span b {
+                                font-weight: normal;
+                            }
+
                         span i {
                             font-style: normal;
                             display: none;
@@ -548,6 +552,10 @@
 
                         .cart-product__cena{
                             margin: 0 0 0 70px;
+
+                            span b {
+                                font-weight: normal;
+                            }
 
                             span i {
                                 font-style: normal;
@@ -634,8 +642,21 @@
                     }
                 }
             }
+        }
 
-            
+        .modal-cart__empty-badge{
+            display: flex;
+            flex-direction: column;
+            max-width: 450px;
+            width: 100%;
+
+            p{
+                font-family: 'Jost-Regular';
+                @include adaptiv-value ("font-size", 25, 20, 1);
+                @include adaptiv-value ("margin-bottom", 50, 30, 1);
+                line-height: lh(35, 25);
+                color: $darkColor;
+            }
         }
     }
 }

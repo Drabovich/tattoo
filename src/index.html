@@ -36,11 +36,11 @@
                 <div class="top-header__user">
                     <div class="top-header__cart">
                         <div class="top-header__cart-price">
-                            <strong>5000</strong>
+                            <strong class="total-cart">0</strong>
                             <span>₽</span>
                         </div>
                         <a class="open-cart" href="#">
-                            <span>1</span>
+                            <span class="counter-cart">0</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                 fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -288,12 +288,20 @@
             </div>
             <div class="modal-cart__price">
                 <ul>
-                    <li><p>Всего единиц товара:</p><span>0</span></li>
+                    <li><p>Всего единиц товара:</p><span class="counter-cart">0</span></li>
                     <li><p>Общая скидка:</p><span>0</span>₽</li>
                     <li><p>Доп. услуги</p><span>0</span>₽</li>
-                    <li><p>Итого:</p><span>0</span>₽</li>
+                    <li><p>Итого:</p><span class="total-cart">0</span>₽</li>
                 </ul>
                 <button class="btn">Оформить заказ</button>
+            </div>
+            <div class="modal-cart__empty-badge hidden">
+                <p>
+                    К сожаление вы ничего не выбрали,
+                    вернитесь пожалуйста в каталог или
+                    перейдите на главную страницу!
+                </p>
+                <a href="./index.html" class="btn">Вернуться на главную</a>
             </div>
             <br><br><br><br><br><br>
         </div>
