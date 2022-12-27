@@ -55,7 +55,7 @@ if (localStorage.getItem('arrProducts')) {
 }
 
 // Изменение товара в корзине и LocalStorage при нажатии на + и -
-window.addEventListener('click', (event) => {
+document.addEventListener('click', (event) => {
     
     if (event.target.dataset.action === 'plus' 
     || event.target.dataset.action === 'minus') {
