@@ -38,7 +38,10 @@ export const modals = () => {
         })
     }
 
+    // Заказать звонок
     bindModal('.slide-catalog__btn', '.modal-call', '.form-call-modal__close');
+
+    // Окно после нажатия на кнопку "Добавить в корзину"
     bindModal('.card-main__btn', '.modal-main', '.modal-close');
 }
 

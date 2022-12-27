@@ -23,5 +23,6 @@ export const tabs = () => {
         document.querySelector(startContent).classList.remove('hidden');
     }
 
+    // Табы в выпадающем меню в шапке сайта
     bindTabs('.catalog-header__title', '.catalog-header__content', 'active-title', '[data-tab="tab-1"]', '#tab-1');
 }

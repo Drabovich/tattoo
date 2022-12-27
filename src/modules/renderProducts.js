@@ -1,3 +1,5 @@
+
+// Отображение карточки с товаром в main-catalog
 import { CATALOG } from './catalog.js';
 
 const productsContainer = document.querySelector('.main__cards');

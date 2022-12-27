@@ -1,7 +1,6 @@
 import './index.html';
 import './index.scss';
 import './modules/header';
-import './modules/main-cards';
 import './modules/cart';
 import './modules/renderProducts';
 import { modals } from './modules/modals';

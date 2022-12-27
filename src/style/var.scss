@@ -26,6 +26,7 @@ $maxWidth: 1920;
 // Ширина ограничивающего контейнера по макету
 $maxWidthContainer: 1216;
 
+
 // Адаптивные свойства!!!
 // @include adaptiv-value ("font-size", start, min, type);
 
@@ -52,6 +53,7 @@ $maxWidthContainer: 1216;
     }
 }
 
+
 // @include adaptiv-personal ("font-size", $startSize, $minSize, $maxScreenResolution);
 @mixin adaptiv-personal($property, $startSize, $minSize, $maxScreenResolution) {
     $addSize: $startSize - $minSize;
@@ -60,6 +62,7 @@ $maxWidthContainer: 1216;
         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxScreenResolution - 320}));
     }
 }
+
 
 // Переменные цветов
 $background: #030201;
