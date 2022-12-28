@@ -3,6 +3,7 @@
 if (document.querySelector('.top-header__icon')) {
     document.querySelector('.top-header__icon').addEventListener('click', () => {
         document.querySelector('body').classList.toggle('lock')
+        document.querySelector('body').classList.toggle('lock-apple')
         document.querySelector('.menu-header').classList.toggle('active')
         document.querySelector('.top-header__icon').classList.toggle('active')
     })

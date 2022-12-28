@@ -16,6 +16,7 @@ document.querySelector('#btn-modal-open-cart').addEventListener('click', () => {
     document.querySelector('.modal-main').classList.add('hidden');
     body.style.overflow = '';
     body.style.paddingRight = '';
+    body.style.position = '';
     window.scrollTo(0, 0);
     openCart()
 })
@@ -36,6 +37,7 @@ document.querySelector('.modal-cart__close').addEventListener('click', () => {
     modalCart.classList.add('hidden');
     body.style.overflow = '';
     body.style.paddingRight = '';
+    body.style.position = '';
 
     window.scrollTo({
         top: gotoBlockValue,
@@ -128,6 +130,7 @@ function openCart() {
     modalCart.classList.remove('hidden');
     const widthScrollCart = window.innerWidth - modalCart.offsetWidth + 'px';
     body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
     body.style.paddingRight = widthScrollCart;
 }
 

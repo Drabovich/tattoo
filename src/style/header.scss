@@ -3,8 +3,8 @@
 .header {
     display: flex;
     justify-content: center;
-    // background-color: $background;
-    background-color: red;
+    background-color: $background;
+    // background-color: red;
     width: 100%;
     min-height: 160px;
     font-family: 'Jost-Regular';
@@ -329,6 +329,8 @@
 
         &.active {
             left: 0;
+            bottom: 0;
+            right: 0;
             // opacity: 1;
             // visibility: visible;
             // pointer-events: all;
