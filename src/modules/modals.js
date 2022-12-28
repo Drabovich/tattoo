@@ -9,15 +9,18 @@ export const modals = () => {
             close = document.querySelectorAll(closeSelector),
             body = document.querySelector('body');
         let widthScroll;
+        let heightScroll;
 
         if (trigger.length > 0) {
             trigger.forEach(item => item.addEventListener('click', event => {
                 if (event.target) event.preventDefault();
+                heightScroll = window.pageYOffset;
+
                 modal.classList.remove('hidden');
                 widthScroll = window.innerWidth - modal.offsetWidth + 'px';
                 body.style.overflow = 'hidden';
                 body.style.position = 'fixed';
-                body.style.top = `-${window.scrollY}px`;
+                body.style.top = `-${heightScroll}px`;
                 body.style.paddingRight = widthScroll;
             }));
         }
@@ -26,20 +29,22 @@ export const modals = () => {
             close.forEach(item => item.addEventListener('click', event => {
                 if (event.target) event.preventDefault();
                 modal.classList.add('hidden');
-                body.style.overflow = '';
-                body.style.paddingRight = '';
                 body.style.position = '';
                 body.style.top = '';
+                body.style.overflow = '';
+                body.style.paddingRight = '';
+                window.scrollTo(0, heightScroll);
             }))
         }   
 
         modal.addEventListener('click', event => {
             if (event.target === modal) {
                 modal.classList.add('hidden');
-                body.style.overflow = '';
-                body.style.paddingRight = '';
                 body.style.position = '';
                 body.style.top = '';
+                body.style.overflow = '';
+                body.style.paddingRight = '';
+                window.scrollTo(0, heightScroll);
             }
         })
     }

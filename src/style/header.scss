@@ -318,11 +318,11 @@
         height: 100%;
         padding: 25px 0 0 0;
         background-color: rgba(0, 0, 0);
-        transition: left 0.3s ease 0s;
+        transition: opacity 2s ease 0s, visibility 2s ease 0s, left 0.3s ease 0s;
         overflow: auto;
         z-index: 20;
         border-top: 1px solid #524336;
-        // opacity: 0;
+        opacity: 0;
         visibility: hidden;
         pointer-events: none;
 
@@ -330,9 +330,10 @@
             left: 0;
             bottom: 0;
             right: 0;
-            // opacity: 1;
+            opacity: 1;
             visibility: visible;
             pointer-events: all;
+            transition: opacity 0.1s ease 0s, visibility 0.1s ease 0s, left 0.3s ease 0s;
         }
     }
 
