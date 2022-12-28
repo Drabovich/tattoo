@@ -24,12 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
 });
 
-document.addEventListener('touchmove', function(event) {
-    if(event.scale !== 1) {
-      event.preventDefault();
-    } 
-  });
-
 
 // При нажати на "Показать еще" открываются все карточки в section Catalog 
 document.querySelector('.catalog__btn').addEventListener('click', () => {
