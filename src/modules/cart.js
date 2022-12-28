@@ -17,6 +17,7 @@ document.querySelector('#btn-modal-open-cart').addEventListener('click', () => {
     body.style.overflow = '';
     body.style.paddingRight = '';
     body.style.position = '';
+    body.style.top = '';
     window.scrollTo(0, 0);
     openCart()
 })
