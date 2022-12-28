@@ -17,6 +17,7 @@ export const modals = () => {
                 widthScroll = window.innerWidth - modal.offsetWidth + 'px';
                 body.style.overflow = 'hidden';
                 body.style.position = 'fixed';
+                body.style.top = `-${window.scrollY}px`;
                 body.style.paddingRight = widthScroll;
             }));
         }
@@ -28,6 +29,7 @@ export const modals = () => {
                 body.style.overflow = '';
                 body.style.paddingRight = '';
                 body.style.position = '';
+                body.style.top = '';
             }))
         }   
 
@@ -37,6 +39,7 @@ export const modals = () => {
                 body.style.overflow = '';
                 body.style.paddingRight = '';
                 body.style.position = '';
+                body.style.top = '';
             }
         })
     }
