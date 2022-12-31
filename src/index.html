@@ -52,7 +52,7 @@
                     </div>
                     <div class="top-header__like">
                         <a href="#">
-                            <span>0</span>
+                            <span class="counter-like">0</span>
                             <svg width="20" height="18" viewBox="0 0 20 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -184,6 +184,26 @@
         </div>
     </header>
 
+    <div class="modal-like hidden">
+        <div class="modal-like__wrapper">
+            <div class="modal-like__title">
+                <h2>Избранное</h2>
+                <span class="modal-like__close">Вернуться в каталог</span>
+            </div>
+            <div class="modal-like__cards">
+            </div>
+            <div class="modal-like__empty-badge hidden">
+                <p>
+                    К сожаление вы ничего не выбрали,
+                    вернитесь пожалуйста в каталог или
+                    перейдите на главную страницу!
+                </p>
+                <a href="./index.html" class="btn">Вернуться на главную</a>
+            </div>
+            <br><br><br><br><br><br>
+        </div>
+    </div>
+
     <section class="slider-catalog">
         <div class="slider">
             <div class="slider__line">
@@ -233,7 +253,7 @@
             <h2>Товар добавлен в корзину</h2>
             <p>Необходимое количество товара можно выбрать при оформлении заказа</p>
             <div class="modal-main__btns">
-                <button id="btn-modal-open-cart" class="btn open-cart">Перейти в корзину</button>
+                <button id="btn-modal-open-cart" class="btn">Перейти в корзину</button>
                 <div class="modal-main__btn-catalog">
                     <span class="modal-close">Вернуться в каталог</span>
                 </div>

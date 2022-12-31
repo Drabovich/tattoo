@@ -153,8 +153,23 @@
                     top: 20px;
                     right: 30px;
 
+                    svg {
+                        pointer-events: none;
+                    }
+
                     svg path {
-                        fill: #524336;
+                        stroke: $hoverLink;
+                        fill: #F5F5F5;
+                    }
+
+                    &:active {
+                        transform: scale(1.1);
+                    }
+
+                    &.active{
+                        svg path {
+                            fill: $hoverLink;
+                        }
                     }
 
                     @media (any-hover: hover) {

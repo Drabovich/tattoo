@@ -1,12 +1,19 @@
 
 //Открытие, закрытие корзины, основные переменные
-const openCartBtn = document.querySelectorAll('.open-cart');
+const openCartBtn = document.querySelector('.open-cart');
 const modalCart = document.querySelector('.modal-cart');
 const body = document.querySelector('body');
 
 // Основные переменные для расчета кол-во товаров в корзине
 const cartWrapper = document.querySelector('.modal-cart__products');
 let arrProducts = [];
+
+
+// Выгрузка товаров из LocalStorage
+if (localStorage.getItem('arrProducts')) {
+    arrProducts = JSON.parse(localStorage.getItem('arrProducts'));
+    arrProducts.forEach(item => renderProduct(item));
+}
 
 
 //========== Открытие, закрытие корзины ==========
@@ -23,18 +30,19 @@ document.querySelector('#btn-modal-open-cart').addEventListener('click', () => {
 })
 
 //Открытие корзины на кнопку ".open-cart"
-if (openCartBtn.length > 0) {
-    openCartBtn.forEach(item => item.addEventListener('click', event => {
+    openCartBtn.addEventListener('click', event => {
         if (event.target) event.preventDefault();
+        if (document.querySelector('.menu-header').classList.contains('active')
+        || document.querySelector('.modal-like').offsetWidth) openCart();
         if (!modalCart.offsetWidth) openCart();
-    }));
-}
+    })
 
 //Закрытие корзины и переход к каталогу
 document.querySelector('.modal-cart__close').addEventListener('click', () => {
     const title = document.querySelector('.main');
     const gotoBlockValue = title.getBoundingClientRect().top + scrollY;
 
+    document.querySelector('.modal-like').classList.add('hidden');
     modalCart.classList.add('hidden');
     body.style.overflow = '';
     body.style.paddingRight = '';
@@ -51,15 +59,8 @@ document.querySelector('.modal-cart__close').addEventListener('click', () => {
 
 //========== Расчет кол-ва товаров в корзине, работа с LocalStorage ==========
 
-// Выгрузка товаров из LocalStorage
-if (localStorage.getItem('arrProducts')) {
-    arrProducts = JSON.parse(localStorage.getItem('arrProducts'));
-    arrProducts.forEach(item => renderProduct(item));
-}
-
 // Изменение товара в корзине и LocalStorage при нажатии на + и -
 document.addEventListener('click', (event) => {
-    
     if (event.target.dataset.action === 'plus' 
     || event.target.dataset.action === 'minus') {
 
@@ -118,6 +119,27 @@ document.addEventListener('click', (event) => {
         renderProduct(productInfo);
     }
 
+    // Считываем данные с карточки по которой нажал user в избранном и добавляем ее в корзину
+    if (event.target.hasAttribute('data-cart-like')) {
+        let card = event.target.closest('.card-like');
+
+        const productInfo = {
+            id: card.dataset.id,
+            imgSrc: card.querySelector('.card-like__img img').getAttribute('src'),
+            title: card.querySelector('.card-like__title').innerText,
+            price: card.querySelector('.card-like__price span').innerText,
+            count: 1,
+            allPrice: card.querySelector('.card-like__price span').innerText,
+        }
+
+        if (!arrProducts.find(item => item.id === productInfo.id)) {
+            arrProducts.push(productInfo);
+        }
+        
+        saveToLocalStorage()
+        renderProduct(productInfo);
+    }
+
     toggleCartSatus();
     calcCartPrice();
 })
@@ -128,6 +150,15 @@ document.addEventListener('click', (event) => {
 
 // Функция открытия корзины (модально окно)
 function openCart() {
+    document.querySelector('.modal-like').classList.add('hidden');
+    body.style.overflow = '';
+    body.style.paddingRight = '';
+    body.style.position = '';
+    body.classList.remove('lock')
+    body.classList.remove('lock-apple')
+    document.querySelector('.menu-header').classList.remove('active')
+    document.querySelector('.top-header__icon').classList.remove('active')
+
     modalCart.classList.remove('hidden');
     const widthScrollCart = window.innerWidth - modalCart.offsetWidth + 'px';
     body.style.overflow = 'hidden';
