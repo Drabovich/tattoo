@@ -32,7 +32,9 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
 });
 
-// document.addEventListener('touchstart', function() {}, false)
+document.addEventListener('touchstart', function(event) {
+    event.preventDefault()
+})
 // ontouchstart=""
 
 
