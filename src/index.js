@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // document.addEventListener('touchstart', function() {}, false)
+// ontouchstart=""
 
 
 // При нажати на "Показать еще" открываются все карточки в section Catalog 
