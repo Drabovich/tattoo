@@ -32,9 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
 });
 
-document.addEventListener('touchstart', function(event) {
-    event.preventDefault()
-})
+document.addEventListener('touchstart', event => event.preventDefault())
 
 
 // При нажати на "Показать еще" открываются все карточки в section Catalog 
@@ -51,10 +49,5 @@ document.querySelector('.main__btn').addEventListener('click', () => {
 
 // Убираем клик не рабочих ссылок в блоке 2 банеров и футере
 document.querySelectorAll('.link-lock').forEach(item => {
-    item.addEventListener('click', event => event.preventDefault())
-})
-
-// Убираем клик кнопок с классом ".info-btn"
-document.querySelectorAll('.info-btn').forEach(item => {
     item.addEventListener('click', event => event.preventDefault())
 })

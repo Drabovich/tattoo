@@ -79,6 +79,7 @@ body {
     line-height: lh(30, 20);
     color: $hoverLink;
     position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     &::before {
         content: "";
@@ -109,7 +110,7 @@ body {
     &:active {
         transform: scale(1.1);
         box-shadow: 0 2px 20px 0 $hoverLink;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 }
 
