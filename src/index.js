@@ -32,6 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
 });
 
+// document.addEventListener('touchstart', function() {}, false)
+
 
 // При нажати на "Показать еще" открываются все карточки в section Catalog 
 document.querySelector('.catalog__btn').addEventListener('click', () => {

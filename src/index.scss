@@ -80,11 +80,6 @@ body {
     color: $hoverLink;
     position: relative;
 
-    &:active {
-        transform: scale(1.1);
-        box-shadow: 0 2px 20px 0 $hoverLink;
-    }
-
     &::before {
         content: "";
         position: absolute;
@@ -109,6 +104,12 @@ body {
         border-left: 2px solid $hoverLink;
         background-color: $backgroundWhite;
         transform: translateY(-50%) rotate(135deg);
+    }
+
+    &:active {
+        transform: scale(1.1);
+        box-shadow: 0 2px 20px 0 $hoverLink;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
     }
 }
 

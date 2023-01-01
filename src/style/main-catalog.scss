@@ -150,8 +150,14 @@
 
                 &__like{
                     position: absolute;
-                    top: 20px;
-                    right: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    top: 10px;
+                    right: 20px;
+
 
                     svg {
                         pointer-events: none;
@@ -162,13 +168,13 @@
                         fill: #F5F5F5;
                     }
 
-                    &:active {
-                        transform: scale(1.1);
-                    }
-
                     &.active{
                         svg path {
                             fill: $hoverLink;
+                        }
+
+                        svg {
+                            pointer-events: none;
                         }
                     }
 
@@ -180,6 +186,10 @@
                                 fill: $hoverLink;
                             }
                         }
+                    }
+
+                    &:active {
+                        transform: scale(1.1);
                     }
                 }
             }
